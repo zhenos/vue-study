@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>vue js study</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Message : {{ message }}</h1>
+    <h2>Enter your message</h2>
+    <input v-model="message" />
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Greetings'
+      }
+    })
+  </script>
+</body>
+</html>
