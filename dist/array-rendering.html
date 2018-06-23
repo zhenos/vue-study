@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>vue js study</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Let's hear some stories!</h1>
+    <ul class="list-group">
+      <li v-for="(story, index) in stories" class="list-group-item">
+        {{index}} {{story.writer}} said "{{story.plot}}"
+      </li>
+    </ul>
+    <pre>{{ $data }}</pre>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '.container',
+      data: {
+        stories: [
+          {
+            plot: "plot1",
+            writer: "jim"
+          },
+          {
+            plot: "plot2",
+            writer: "kim"
+          },
+          {
+            plot: "plot3",
+            writer: "lee"
+          }
+        ]
+      }
+    })
+  </script>
+</body>
+</html>

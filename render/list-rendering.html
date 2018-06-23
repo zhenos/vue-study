@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>vue js study</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>4의 배수 </h1>
+    <ul class="list-group">
+      <li v-for="i in 11" class="list-group-item">
+        {{ i-1 }} times 4 equals {{ (i-1) * 4}}
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '.container'
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>vue js study</title>
+</head>
+<body>
+  <div id="app">
+    <template v-if="message=='12'">
+      <p>if 12 </p>
+    </template>
+    <template v-else="">
+      <p>if message !== 12</p>
+    </template>
+    <textarea v-model="message"></textarea>
+    <button v-show="message">v-show button</button>
+    <pre>
+      {{ $data }}
+    </pre>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        message: ""
+      }
+    });
+  </script>
+</body>
+</html>

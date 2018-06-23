@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>vue js study</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Type 2 numbers and choose operation.</h1>
+    <form>
+      <!-- 입력을 숫자로 파싱하기 위해 특별한 한정자인 'number'를 사용-->
+      <input v-model.number="a" class="form-control">
+      <select v-model="operator" class="form-control">
+        <option>
+          +
+        </option>
+        <option>
+          -
+        </option>
+        <option>
+          *
+        </option>
+        <option>
+          /
+        </option>
+      </select>
+      <input v-model.number="b" class="form-control">
+      <!-- .prevent가 vue.js에서 제공하는 e.preventDefault() 역할을 하는 함수 -->
+      <button type="submit" @click.prevent="calculate" class="btn btn-primary">Calculate</button>
+    </form>
+    <h2>Result : {{a}} {{operator}} {{b}} = {{c}}</h2>
+    <pre>
+      {{$data}}
+    </pre>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '.container',
+      data: {
+        a: 0,
+        b: 2,
+        c: null,
+        operator: "+",
+      },
+      //method 객체 아래에 메서드를 정의
+      methods: {
+        calculate: function(){
+          switch (this.operator){
+            case "+":
+              this.c = this.a + this.b
+              break;
+            case "-":
+              this.c = this.a - this.b
+              break;
+            case "*":
+              this.c = this.a * this.b
+              break;
+            case "/":
+              this.c = this.a / this.b
+              break;
+            }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>vue js study</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <button v-on:click="upvotes++">
+      upvote! {{upvotes}}
+    </button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '.container',
+      data: {
+        upvotes: 0
+      }
+    });
+  </script>
+</body>
+</html>
